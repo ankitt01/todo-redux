@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 export const Todo = () => {
+    const [inputData, setInputData] = useState('')
     return (
         <div>
             <div className="main-div">
@@ -10,8 +11,8 @@ export const Todo = () => {
                     </figure>
 
                     <div className="addItems">
-                    <input type="text" placeholder="✍ Add Items " />
-                    
+                        <input type="text" placeholder="✍ Add Items " value={inputData} onChange={(e) => setInputData(e.target.value)}/>
+                        <i className="fa fa-plus add-btn" onClick={() => {}} />
                     </div>
                 </div>
                 </div>
