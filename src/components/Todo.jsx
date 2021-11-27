@@ -34,6 +34,9 @@ export const Todo = () => {
                         }
                         
                     </div>
+                    <div className="removeItems">
+                        <button className="btn effect04" data-sm-link-text="Remove All" onClick={() => dispatch(removeTodo())}><span>Check List</span></button>
+                    </div>
                 </div>
                 </div>
         </div>

@@ -15,6 +15,8 @@ const todoReducers = (state = initialData, action) => {
         case "DELETE_TODO":
             const newList = state.list.filter(ele => ele.id != action.id)
             return {...state, list: newList }
+        case "REMOVE_TODO":
+            return {...state, list: [] }
         default:
             return state
     }
