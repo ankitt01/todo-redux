@@ -14,8 +14,15 @@ export const Todo = () => {
                     </figure>
 
                     <div className="addItems">
-                        <input type="text" placeholder="✍ Add Items " value={inputData} onChange={(e) => setInputData(e.target.value)}/>
-                        <i className="fa fa-plus add-btn" onClick={() => dispatch(addTodo(inputData), setInputData(""))} />
+                        <form onSubmit={(e) => {
+                                e.preventDefault()
+                                dispatch(addTodo(inputData))
+                                setInputData("")
+                            }
+                        }>
+                            <input type="text" placeholder="✍ Add Items " value={inputData} onChange={(e) => setInputData(e.target.value)}/>
+                            <i className="fa fa-plus add-btn" onClick={() => dispatch(addTodo(inputData), setInputData(""))} />
+                        </form>
                     </div>
 
                     <div className="showItems">
